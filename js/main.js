@@ -1,24 +1,7 @@
-const searchEl = document.querySelector('.search');
-const searchInputEl = searchEl.querySelector('input');
-
-searchEl.addEventListener('click', function () {
-  searchInputEl.focus();
-});
-
-searchInputEl.addEventListener('focus', function () {
-  searchEl.classList.add('focused');
-  searchInputEl.setAttribute('placeholder', '통합검색');
-});
-
-searchInputEl.addEventListener('blur', function () {
-  searchEl.classList.remove('focused');
-  searchInputEl.setAttribute('placeholder', '');
-});
-
 const badgeEl = document.querySelector('header .badges');
 const toTopEl = document.querySelector('#to-top');
+
 window.addEventListener('scroll', _.throttle(function () {
-  console.log(window.scrollY);
   if (window.scrollY > 500) { //배지 감추기
     //gsap.to(요소, 지속시간, 옵션);
     gsap.to(badgeEl, .6, {
@@ -27,7 +10,7 @@ window.addEventListener('scroll', _.throttle(function () {
     });
     //버튼 보이기
     gsap.to('#to-top', .2, { //요소부분에 클래스나 ID를 적어도 됨 #to-top
-      x: 0
+      x: 0,
     });
 
   } else { //배지 출력
@@ -37,7 +20,7 @@ window.addEventListener('scroll', _.throttle(function () {
     });
     //버튼 감추기
     gsap.to('#to-top', .2, {
-      x: 100
+      x: 100,
     });
   }
 }, 300));
@@ -141,5 +124,3 @@ spyEls.forEach(function (spyEl) {
     .addTo(new ScrollMagic.Controller());
 });
 
-const thisYear = document.querySelector('.this-year');
-thisYear.textContent = new Date().getFullYear(); //현재 년도
