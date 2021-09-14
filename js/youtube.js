@@ -11,11 +11,11 @@
  function onYouTubeIframeAPIReady() {
    //<div id="player"></div>
    new YT.Player('player', {
-     videoId: 'zorYgb5ayw8', //최초 재생할 유튜브 영상 ID
+     videoId: '4Kfd81C0F0A', //최초 재생할 유튜브 영상 ID
      playerVars: {
        autoplay: true,
        loop: true,
-       playlist: 'zorYgb5ayw8' //반복재생할 유튜브 ID 영상을 또 적어줘야함
+       playlist: '4Kfd81C0F0A' //반복재생할 유튜브 ID 영상을 또 적어줘야함
      },
      events: {
        onReady: function (event) {
